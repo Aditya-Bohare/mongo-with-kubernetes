@@ -30,3 +30,31 @@ This repository contains Kubernetes manifests to deploy a **MongoDB** database a
 git clone https://github.com/Aditya-Bohare/mongo-with-kubernetes.git
 cd mongo-with-kubernetes
 ```
+### 2. Deploy the configMap and secret yml
+
+```bash
+kubectl apply -f ./mongo-secret.yml
+kubectl apply -f ./mongoexpress-config.yml
+```
+
+### 3. Deploy the pod and service yml
+```bash
+kubectl apply -f ./mongodb-depl.yml
+kubectl apply -f ./mongoexpress-depl.yml
+```
+
+### 4. Accessing mongo express ui in localhost:8081
+```bash
+kubectl port-forward service/mongo-express-service 8081:8081
+```
+
+### 5. Cleanup the deployment, service, configMap, secret
+```bash
+kubectl delete -f ./mongoexpress-depl.yaml
+kubectl delete -f ./mongodb-depl.yaml
+kubectl delete -f ./mongoexpress-config.yaml
+kubectl delete -f ./mongo-secret.yaml
+```
+
+
+Found an issue or have a suggestion? Feel free to open an issue or submit a pull request!
