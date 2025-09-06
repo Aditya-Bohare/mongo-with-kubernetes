@@ -27,6 +27,6 @@ This repository contains Kubernetes manifests to deploy a **MongoDB** database a
 ### 1. Clone this repository
 
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/Aditya-Bohare/mongo-with-kubernetes.git
+cd mongo-with-kubernetes
 ```
